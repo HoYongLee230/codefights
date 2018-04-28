@@ -13,10 +13,5 @@ boolean hasPathWithGivenSum(Tree<Integer> t, int s) {
 }
 
 boolean pathRecursion(Tree<Integer> t, int s) {
-    if(t != null) {
-        s -= t.value;
-        return (s == 0 && t.left == null && t.right == null)?true:pathRecursion(t.left, s) || pathRecursion(t.right, s);
-    }
-    else
-        return false;
+    return t == null?false:(s == t.value && t.left == null && t.right == null)?true:pathRecursion(t.left, s - t.value) || pathRecursion(t.right, s - t.value);
 }

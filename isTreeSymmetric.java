@@ -9,16 +9,12 @@
 //   Tree<T> right;
 // }
 boolean isTreeSymmetric(Tree<Integer> t) {
-    if(t == null || (t.left == null && t.right == null))
+    if(t == null)
         return true;
-    if((t.left == null && t.right != null) || (t.left != null && t.right == null) || !t.left.value.equals(t.right.value))
-        return false;
     Queue<Tree<Integer>> qLeft = new LinkedList<>(), qRight = new LinkedList<>();
     List<Integer> left = new ArrayList<>(), right = new ArrayList<>();
-    qLeft.add(t.left);
-    qRight.add(t.right);
-    left.add(t.left.value);
-    right.add(t.right.value);
+    qLeft.add(t);
+    qRight.add(t);
     while(!qLeft.isEmpty()) {
         Tree<Integer> tempL = qLeft.remove();
         if(tempL.left != null) 

@@ -5,13 +5,13 @@ int[] citiesConquering(int n, int[][] roads) {
     for(int a = 0; a < n; a++)
         neighborList.put(a, new ArrayList<Integer>());
     for (int i = 0; i < roads.length; i++) {
-		List<Integer> neighbors = neighborList.get(roads[i][0]);
-		neighbors.add(roads[i][1]);
-		neighborList.put(roads[i][0], neighbors);
-		List<Integer> neighbors2 = neighborList.get(roads[i][1]);
-		neighbors2.add(roads[i][0]);
-		neighborList.put(roads[i][1], neighbors2);
-	}
+	List<Integer> neighbors = neighborList.get(roads[i][0]);
+	neighbors.add(roads[i][1]);
+	neighborList.put(roads[i][0], neighbors);
+	List<Integer> neighbors2 = neighborList.get(roads[i][1]);
+	neighbors2.add(roads[i][0]);
+	neighborList.put(roads[i][1], neighbors2);
+    }
     boolean conqueredAll = false;
     int count = 1;
     while (!conqueredAll) {

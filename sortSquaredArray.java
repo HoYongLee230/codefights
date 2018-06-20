@@ -1,7 +1,6 @@
 int[] sortedSquaredArray(int[] array) {
     int [] result = new int[array.length];
-    List <Integer> neg = new ArrayList<>();
-    List <Integer> pos = new ArrayList<>();
+    List <Integer> neg = new ArrayList<>(), pos = new ArrayList<>();
     for(int i = 0; i < array.length; i++) {
         if(array[i] < 0)
             neg.add(array[i] * array[i]);
